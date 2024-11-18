@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class MoneyDelete : MonoBehaviour
 {
-    public void Awake()
+    private void Awake()
     {
         StartCoroutine(Remove());
     }
 
     IEnumerator Remove()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.8f);
         Destroy(gameObject);
     }
 }

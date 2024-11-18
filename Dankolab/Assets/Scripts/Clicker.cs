@@ -7,22 +7,22 @@ using UnityEngine.UI;
 public class Clicker : MonoBehaviour
 {
     [SerializeField] private GameObject Money;
-    public Transform Spawn;
+    [SerializeField] private Transform Spawn;
 
     private int ClickPower = 1;
-    public Text ClickText;
+    [SerializeField] private Text ClickText;
 
     private int Score = 0;
-    public Text ScoreText;
+    [SerializeField] private Text ScoreText;
 
     private int Lvl = 1;
-    public Text LvlText;
+    [SerializeField] private Text LvlText;
 
     private int UpgradeCost = 20;
-    public Text UpgradeText;
-    public Button UpgradeButton;
+    [SerializeField] private Text UpgradeText;
+    [SerializeField] private Button UpgradeButton;
 
-    public void Awake()
+    private void Awake()
     {
         UpdUI();
     }
@@ -44,7 +44,7 @@ public class Clicker : MonoBehaviour
         float ang = Random.Range(1f, 180f);
         float dir = Random.Range(-2f, 2f);
         GameObject Throw = Instantiate(Money, Spawn);
-        Throw.GetComponent<Rigidbody2D>().velocity = new Vector2(dir, 10f);
+        Throw.GetComponent<Rigidbody2D>().velocity = new Vector2(dir, 12f);
         Throw.transform.rotation = Quaternion.AngleAxis(ang + 10f, Vector3.back);
         Score += ClickPower;
         UpdUI();
